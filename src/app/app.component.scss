@@ -1,0 +1,17 @@
+p{
+    color: red;
+}
+
+nav{
+    animation: anima 1s;
+}
+
+@keyframes anima{
+    from{background-color: #000;}
+    to{background-color: #0000;}
+}
+
+.link-ativo{
+    color: #369;
+    
+}

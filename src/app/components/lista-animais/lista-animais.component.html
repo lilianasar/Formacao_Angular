@@ -1,0 +1,13 @@
+<h2>Lista animais</h2>
+<div class="lista">
+    @for(animal of animais; track animal.id){
+        <div class="cartao" [routerLink] = "'/animal-detalhes/' + animal.id">
+            <h3>{{animal.nome}}
+                <small>(#{{animal.id}})</small>
+            </h3>
+            <p>
+                Espécie: {{animal.especie}}
+            </p>
+        </div>
+    }
+</div>

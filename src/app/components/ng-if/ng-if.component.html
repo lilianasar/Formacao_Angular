@@ -1,0 +1,55 @@
+<h1>Diretivas condicionais</h1>
+
+<h2>*ngIf</h2>
+<div>
+    <h3>If</h3>
+    <div>
+        <p *ngIf="num >= 0">O valor é maior ou igual a 0.</p> <!--importar no ts-->
+    </div>
+</div>
+
+<div>
+    <h3>Else If</h3>
+    <div>
+        <p *ngIf="num > 0; else senaobloco_2">O valor é maior ou igual a 0.</p> <!--importar no ts-->
+        
+        <ng-template #senaobloco_2>
+            <p *ngIf="num < 0; else senaobloco_3">O valor é menor que 0.</p>
+
+            <ng-template #senaobloco_3>O valor é igual a 0</ng-template>
+        </ng-template> <!--para usar o else-->
+    </div>
+</div>
+
+<h2>a if</h2>
+<div>
+    <h3>If</h3>
+    @if(num>0){
+        <p>O valor é maior que 0.</p>
+    }
+    @else if(num<0){
+        <p>O valor é menor que 0.</p>
+    }
+    @else(){
+        <p>O valor é igual a 0.</p>
+    }
+</div>
+
+<h2>Switch</h2>
+<div [ngSwitch]="true">
+    <p *ngSwitchCase="num>0">O valor é maior que 0.</p>
+    <p *ngSwitchCase="num<0">O valor é menor que 0.</p>
+    <p *ngSwitchCaseDefault="">O valor é 0.</p>
+</div>
+
+@switch (num) {
+    @case (1) {
+        <p>O valor é igual a 1.</p>
+    }
+    @case (-1) {
+        <p>O valor é igual a -1.</p>
+    }
+    @default{
+        <p>O valor é diferente de 1 e -1.</p>
+    }
+}

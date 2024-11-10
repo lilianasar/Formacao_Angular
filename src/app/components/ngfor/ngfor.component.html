@@ -1,0 +1,29 @@
+<h1>Loops</h1>
+
+<h2>*ngFor</h2>
+<div>
+    <ul>
+        <li *ngFor="let item of arr">
+            {{item}}
+        </li>
+    </ul>
+
+    <ul>
+        <li *ngFor="let fruta of frutas; last as eOUltimo  ">
+            {{fruta}} ({{eOUltimo}})
+        </li>
+    </ul>
+
+    <h2>aFor</h2>
+    <div>
+        <ul>
+            @for (fruta of frutas; track $index) {
+                <li>{{fruta}} ({{$last}})</li>
+            }
+            @empty {
+                <p>Não há frutas!</p>
+            }
+        </ul>
+    </div>
+    
+</div>
